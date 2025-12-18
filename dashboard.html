@@ -5,38 +5,65 @@
   <title>Dashboard | Calm Canvas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Font -->
+  <!-- Drafting Mono Font -->
   <link href="https://fonts.googleapis.com/css2?family=Drafting+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="css/dashboard.css">
 </head>
+
 <body>
 
-<div class="mobile">
+  <div class="mobile">
 
-  <div class="greeting" id="greetingText"></div>
-  <div class="sub-text">How are you feeling today?</div>
+    <div class="greeting">Hello, Joshnitha 👋</div>
+    <div class="sub-text">How are you feeling today?</div>
 
-  <div class="mood-options">
-    <div class="mood" onclick="saveMood(1)">😔</div>
-    <div class="mood" onclick="saveMood(2)">😐</div>
-    <div class="mood" onclick="saveMood(3)">😊</div>
-    <div class="mood" onclick="saveMood(4)">🤩</div>
-    <div class="mood" onclick="saveMood(5)">😁</div>
+    <!-- Mood Buttons -->
+    <div class="mood-options">
+      <div class="mood" onclick="saveMood(1)">😔</div>
+      <div class="mood" onclick="saveMood(2)">😐</div>
+      <div class="mood" onclick="saveMood(3)">😊</div>
+      <div class="mood" onclick="saveMood(4)">🤩</div>
+      <div class="mood" onclick="saveMood(5)">😁</div>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="features">
+      <a href="journal.html" class="feature-card journal">
+        <div class="feature-icon">📔</div>
+        <div class="feature-title">My Journal</div>
+      </a>
+
+      <a href="mood-trend.html" class="feature-card mood-trend">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Mood Trend</div>
+      </a>
+
+      <a href="wellness-tracker.html" class="feature-card wellness">
+        <div class="feature-icon">🧘‍♀️</div>
+        <div class="feature-title">Wellness Tracker</div>
+      </a>
+
+      <a href="soothing-sounds.html" class="feature-card sounds">
+        <div class="feature-icon">🎧</div>
+        <div class="feature-title">Soothing Sounds</div>
+      </a>
+
+      <a href="reminders.html" class="feature-card reminders">
+        <div class="feature-icon">🔔</div>
+        <div class="feature-title">Reminders</div>
+      </a>
+
+      <a href="calm-reset.html" class="feature-card calm">
+        <div class="feature-icon">🌿</div>
+        <div class="feature-title">Calm Resets</div>
+      </a>
+    </div>
+
   </div>
 
-  <div class="features">
-    <div class="feature" style="background:#ffd6e8">📔 My Journal</div>
-    <div class="feature" style="background:#d6e4ff">📊 Mood Trend</div>
-    <div class="feature" style="background:#d7f5ec">🧘 Wellness</div>
-    <div class="feature" style="background:#fff1d6">🎧 Sounds</div>
-    <div class="feature" style="background:#ffe6e6">🔔 Reminders</div>
-    <div class="feature" style="background:#e6ddff">🌿 Calm Reset</div>
-  </div>
-
-</div>
-
-<script src="dashboard.js"></script>
+  <!-- JS -->
+  <script src="js/dashboard.js"></script>
 </body>
 </html>
