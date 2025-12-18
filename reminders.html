@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reminders | Calm Canvas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Drafting Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Drafting+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reminders.css">
+</head>
+
+<body>
+  <div class="mobile">
+
+    <div class="top-bar" onclick="goBack()">← Dashboard</div>
+
+    <h2>🔔 Smart Wellness Reminders</h2>
+
+    <div id="permissionBox" class="note" style="display:none;">
+      Please allow notifications
+    </div>
+
+    <select id="reminderText">
+      <option value="">Select reminder</option>
+      <option value="💧 Drink water">💧 Drink water (every 2 hours)</option>
+      <option value="😴 Time to sleep">😴 Time to sleep (10:00 PM)</option>
+      <option value="🧘 Enter wellness log">🧘 Enter wellness log (7:00 PM)</option>
+      <option value="🚶 Take a short walk">🚶 Take a short walk (6:00 PM)</option>
+      <option value="📵 Take a screen break">📵 Take a screen break (4:00 PM)</option>
+      <option value="🌞 Get sunlight">🌞 Get sunlight (8:00 AM)</option>
+    </select>
+
+    <button class="main-btn" onclick="addReminder()">Add Reminder</button>
+
+    <ul id="reminderList"></ul>
+
+    <small>Notifications work while the tab is open (demo mode)</small>
+
+  </div>
+
+  <!-- Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <h3>Edit Reminder</h3>
+      <input type="text" id="editText" placeholder="Reminder text">
+      <input type="time" id="editTime">
+      <button onclick="saveEdit()">Save</button>
+      <button onclick="closeModal()" style="background:red; color:white;">Cancel</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="js/reminders.js"></script>
+</body>
+</html>

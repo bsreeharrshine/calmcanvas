@@ -8,10 +8,10 @@ function loginUser() {
     return;
   }
 
-  // Save user details
+  // STORAGE (ONLY THIS PART IS USED FOR CONNECTION)
   localStorage.setItem("loggedInName", name);
   localStorage.setItem("loggedInEmail", email);
 
-  // Redirect to dashboard
+  // Redirect
   window.location.href = "dashboard.html";
 }

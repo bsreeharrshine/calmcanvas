@@ -17,6 +17,7 @@ body {
   padding: 28px 22px;
   box-sizing: border-box;
   overflow-y: auto;
+  position: relative;
 }
 
 .greeting {
@@ -67,7 +68,6 @@ body {
   height: 120px;
   border-radius: 22px;
   padding: 16px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -75,8 +75,8 @@ body {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 12px 25px rgba(0,0,0,0.18);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
   text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .feature-card:hover {
@@ -92,27 +92,30 @@ body {
   font-size: 15px;
 }
 
-/* Card backgrounds */
-.journal {
-  background: linear-gradient(135deg, #ffd6e8, #f2a7c1);
+/* Backgrounds */
+.journal { background: linear-gradient(135deg, #ffd6e8, #f2a7c1); }
+.mood-trend { background: linear-gradient(135deg, #d6e4ff, #c1d0ff); }
+.wellness { background: linear-gradient(135deg, #d7f5ec, #a6ddd1); }
+.sounds { background: linear-gradient(135deg, #fff1d6, #ffe3a3); }
+.reminders { background: linear-gradient(135deg, #ffe6e6, #ffb3b3); }
+.calm { background: linear-gradient(135deg, #e6ddff, #cbbcff); }
+.burn { background: linear-gradient(135deg, #ffb3b3, #ff6b6b); }
+
+/* Logout */
+.logout-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.mood-trend {
-  background: linear-gradient(135deg, #d6e4ff, #c1d0ff);
-}
-
-.wellness {
-  background: linear-gradient(135deg, #d7f5ec, #a6ddd1);
-}
-
-.sounds {
-  background: linear-gradient(135deg, #fff1d6, #ffe3a3);
-}
-
-.reminders {
-  background: linear-gradient(135deg, #ffe6e6, #ffb3b3);
-}
-
-.calm {
-  background: linear-gradient(135deg, #e6ddff, #cbbcff);
+.logout-btn:hover {
+  background: white;
 }

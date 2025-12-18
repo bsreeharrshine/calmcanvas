@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #e6ebf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Drafting Mono', monospace;
+}
+
+.mobile {
+  width: 375px;
+  height: 700px;
+  background: linear-gradient(180deg, #f2a7c1, #c1d0ff, #a6ddd1);
+  border-radius: 30px;
+  box-shadow: 0 25px 55px rgba(0,0,0,0.25);
+  padding: 24px 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.top-bar {
+  margin-bottom: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #022b3a;
+}
+
+h2 {
+  margin: 10px 0;
+  color: #022b3a;
+  font-size: 20px;
+}
+
+.note {
+  font-size: 13px;
+  text-align: center;
+  color: #355f7a;
+  margin-bottom: 14px;
+}
+
+select, button, input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 14px;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+button.main-btn {
+  background: #022b3a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+li {
+  background: rgba(255,255,255,0.9);
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border-radius: 14px;
+  font-size: 14px;
+  color: #022b3a;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li div.buttons {
+  display: flex;
+  gap: 6px;
+}
+
+li button {
+  padding: 4px 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+li button.edit {
+  background: #0056b3;
+  color: white;
+}
+
+li button.delete {
+  background: red;
+  color: white;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #f2f2f2;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 300px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.modal-content input,
+.modal-content select {
+  margin-bottom: 12px;
+}
+
+.modal-content button {
+  margin-top: 8px;
+}
+
+small {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 11px;
+  color: #355f7a;
+}

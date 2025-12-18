@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burn Your Thoughts | Calm Canvas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Drafting Mono -->
+  <link href="https://fonts.googleapis.com/css2?family=Drafting+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/burn-thoughts.css">
+</head>
+<body>
+
+  <div class="container">
+    <button onclick="goBack()">← Back</button>
+    <h2>Burn Your Thoughts 🔥</h2>
+
+    <textarea id="thoughtInput" placeholder="Type your thoughts here..."></textarea>
+    <button onclick="burnPaper()">Burn!</button>
+
+    <div id="paper"></div>
+    <canvas id="burnCanvas" width="375" height="700"></canvas>
+    <div id="quote">“Peace comes from letting go.” 🌿</div>
+  </div>
+
+  <!-- JS -->
+  <script src="js/burn-thoughts.js"></script>
+</body>
+</html>

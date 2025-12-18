@@ -4,48 +4,59 @@
   <meta charset="UTF-8">
   <title>My Journal | Calm Canvas</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Drafting+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Drafting+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/journal.css">
 </head>
+
 <body>
 
-  <div class="mobile">
+<div class="mobile">
 
-    <!-- Dashboard Button -->
-    <button class="dashboard-btn" onclick="goToDashboard()">Dashboard</button>
+  <button class="dashboard-btn" onclick="goToDashboard()">Dashboard</button>
 
-    <div class="greeting">Hello, Joshnitha 👋</div>
-    <div class="date-text" id="currentDate"></div>
+  <div class="greeting" id="greetingText">Hello 👋</div>
+  <div class="date-text" id="currentDate"></div>
 
-    <!-- Password Section -->
-    <div class="password-section" id="passwordSection">
-      <input type="password" id="passInput" placeholder="Enter Passkey">
-      <button onclick="checkPassword()">Unlock Journal</button>
+  <!-- PASSCODE SECTION -->
+  <div class="password-section" id="passwordSection">
+
+    <input type="password" id="passInput" placeholder="Enter passcode">
+
+    <button id="unlockBtn" onclick="unlockWithPasscode()">Unlock Journal</button>
+
+    <!-- CREATE PASSCODE LINK -->
+    <div
+      id="createPasscodeLink"
+      style="font-size:13px;color:#4fa3c7;cursor:pointer;margin-top:8px;display:none;"
+      onclick="createPasscode()">
+      Create passcode
     </div>
-
-    <!-- Journal Section -->
-    <div class="journal-section" id="journalSection" style="display:none;">
-      <textarea id="journalText" placeholder="Write your thoughts here..."></textarea>
-      <button onclick="saveEntry()">Save Entry</button>
-
-      <!-- Inline Past Entries -->
-      <div class="past-entries" id="pastEntriesContainer"></div>
-    </div>
-
-    <!-- Detailed Entry View -->
-    <div class="entry-view" id="entryView">
-      <div class="entry-content" id="entryContent"></div>
-      <button onclick="closeEntryView()">Close</button>
-    </div>
-
-    <!-- Library Button -->
-    <div class="library-btn" onclick="togglePast()">📚<span>Library</span></div>
 
   </div>
 
-  <!-- JS -->
-  <script src="js/journal.js"></script>
+  <!-- JOURNAL -->
+  <div class="journal-section" id="journalSection" style="display:none;">
+    <textarea id="journalText" placeholder="Write your thoughts here..."></textarea>
+
+    <button onclick="saveEntry()">Save Entry</button>
+    <button onclick="changePasscode()" style="background:#ff8c8c;">
+      Change Passcode
+    </button>
+
+    <div class="past-entries" id="pastEntriesContainer"></div>
+  </div>
+
+  <!-- ENTRY VIEW -->
+  <div class="entry-view" id="entryView">
+    <div class="entry-content" id="entryContent"></div>
+    <button onclick="closeEntryView()">Close</button>
+  </div>
+
+  <div class="library-btn" onclick="togglePast()">📚<span>Library</span></div>
+
+</div>
+
+<script src="js/journal.js"></script>
 </body>
 </html>

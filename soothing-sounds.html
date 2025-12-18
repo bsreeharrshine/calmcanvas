@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Soothing Sounds | Calm Canvas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Drafting+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/soothing-sounds.css">
+</head>
+<body>
+
+  <div class="mobile">
+    <button class="back-btn" onclick="goBack()">← Back</button>
+    <h2>Soothing Sounds</h2>
+
+    <div class="sound-grid">
+
+      <!-- Rain -->
+      <div class="sound-card">
+        <div class="sound-icon">🌧️</div>
+        <div class="sound-title">Rain</div>
+        <div class="controls">
+          <button class="play" onclick="playSound('rain')">Play</button>
+          <button class="pause" onclick="pauseSound('rain')">Pause</button>
+        </div>
+        <audio id="rain" src="sounds/rain.mp3"></audio>
+      </div>
+
+      <!-- Meditation -->
+      <div class="sound-card">
+        <div class="sound-icon">🎵</div>
+        <div class="sound-title">Meditation</div>
+        <div class="controls">
+          <button class="play" onclick="playSound('meditation')">Play</button>
+          <button class="pause" onclick="pauseSound('meditation')">Pause</button>
+        </div>
+        <audio id="meditation" src="sounds/meditation.mp3"></audio>
+      </div>
+
+      <!-- Ocean -->
+      <div class="sound-card">
+        <div class="sound-icon">🌊</div>
+        <div class="sound-title">Ocean Waves</div>
+        <div class="controls">
+          <button class="play" onclick="playSound('ocean')">Play</button>
+          <button class="pause" onclick="pauseSound('ocean')">Pause</button>
+        </div>
+        <audio id="ocean" src="sounds/ocean.mp3"></audio>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="js/soothing-sounds.js"></script>
+</body>
+</html>
