@@ -5,7 +5,7 @@ function goBack() {
   window.location.href = "dashboard.html";
 }
 
-/* Notification permission */
+// Notification permission
 if ('Notification' in window && Notification.permission === 'default') {
   document.getElementById('permissionBox').style.display = 'block';
   Notification.requestPermission();
@@ -19,11 +19,8 @@ const defaultTimes = {
   "🌞 Get sunlight": "08:00"
 };
 
-/* Add reminder */
 function addReminder() {
-  const reminderText = document.getElementById("reminderText");
   const text = reminderText.value;
-
   if (!text) {
     alert("Select a reminder");
     return;
@@ -31,86 +28,76 @@ function addReminder() {
 
   if (text.includes("Drink water")) {
     const baseHour = 8;
-    const minute = "00";
     for (let i = 0; i < 4; i++) {
       const hour = (baseHour + i * 2) % 24;
       reminders.push({
         text,
-        time: hour.toString().padStart(2, '0') + ':' + minute,
+        time: hour.toString().padStart(2, '0') + ":00",
         notified: false
       });
     }
   } else {
-    const time = defaultTimes[text];
-    reminders.push({ text, time, notified: false });
+    reminders.push({
+      text,
+      time: defaultTimes[text],
+      notified: false
+    });
   }
 
   displayReminders();
 }
 
-/* Display reminders */
 function displayReminders() {
-  const list = document.getElementById('reminderList');
-  list.innerHTML = '';
+  const list = document.getElementById("reminderList");
+  list.innerHTML = "";
 
   reminders.forEach((r, index) => {
-    const li = document.createElement('li');
+    const li = document.createElement("li");
 
-    const textDiv = document.createElement('div');
-    textDiv.textContent = `${r.time} — ${r.text}`;
-    li.appendChild(textDiv);
-
-    const buttonsDiv = document.createElement('div');
-    buttonsDiv.className = 'buttons';
-
-    const editBtn = document.createElement('button');
-    editBtn.textContent = 'Edit ✏️';
-    editBtn.className = 'edit';
-    editBtn.onclick = () => openModal(index);
-    buttonsDiv.appendChild(editBtn);
-
-    const delBtn = document.createElement('button');
-    delBtn.textContent = 'Delete ❌';
-    delBtn.className = 'delete';
-    delBtn.onclick = () => {
-      reminders.splice(index, 1);
-      displayReminders();
-    };
-    buttonsDiv.appendChild(delBtn);
-
-    li.appendChild(buttonsDiv);
+    li.innerHTML = `
+      <div>${r.time} — ${r.text}</div>
+      <div class="buttons">
+        <button class="edit" onclick="openModal(${index})">Edit ✏️</button>
+        <button class="delete" onclick="deleteReminder(${index})">Delete ❌</button>
+      </div>
+    `;
     list.appendChild(li);
   });
 }
 
-/* Modal functions */
+function deleteReminder(index) {
+  reminders.splice(index, 1);
+  displayReminders();
+}
+
 function openModal(index) {
   editIndex = index;
-  document.getElementById('editText').value = reminders[index].text;
-  document.getElementById('editTime').value = reminders[index].time;
-  document.getElementById('editModal').style.display = 'block';
+  editText.value = reminders[index].text;
+  editTime.value = reminders[index].time;
+  editModal.style.display = "block";
 }
 
 function closeModal() {
-  document.getElementById('editModal').style.display = 'none';
+  editModal.style.display = "none";
   editIndex = null;
 }
 
 function saveEdit() {
   if (editIndex !== null) {
-    reminders[editIndex].text = document.getElementById('editText').value;
-    reminders[editIndex].time = document.getElementById('editTime').value;
+    reminders[editIndex].text = editText.value;
+    reminders[editIndex].time = editTime.value;
     reminders[editIndex].notified = false;
     displayReminders();
     closeModal();
   }
 }
 
-/* Notification check */
+// Notification check
 setInterval(() => {
   const now = new Date();
   const current =
-    now.getHours().toString().padStart(2, '0') + ':' +
+    now.getHours().toString().padStart(2, '0') +
+    ":" +
     now.getMinutes().toString().padStart(2, '0');
 
   reminders.forEach(r => {
