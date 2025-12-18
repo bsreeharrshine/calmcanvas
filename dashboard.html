@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Calm Canvas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Drafting+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="mobile">
+
+  <div class="greeting" id="greetingText"></div>
+  <div class="sub-text">How are you feeling today?</div>
+
+  <div class="mood-options">
+    <div class="mood" onclick="saveMood(1)">😔</div>
+    <div class="mood" onclick="saveMood(2)">😐</div>
+    <div class="mood" onclick="saveMood(3)">😊</div>
+    <div class="mood" onclick="saveMood(4)">🤩</div>
+    <div class="mood" onclick="saveMood(5)">😁</div>
+  </div>
+
+  <div class="features">
+    <div class="feature" style="background:#ffd6e8">📔 My Journal</div>
+    <div class="feature" style="background:#d6e4ff">📊 Mood Trend</div>
+    <div class="feature" style="background:#d7f5ec">🧘 Wellness</div>
+    <div class="feature" style="background:#fff1d6">🎧 Sounds</div>
+    <div class="feature" style="background:#ffe6e6">🔔 Reminders</div>
+    <div class="feature" style="background:#e6ddff">🌿 Calm Reset</div>
+  </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

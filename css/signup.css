@@ -11,12 +11,7 @@ body {
 .mobile {
   width: 375px;
   height: 750px;
-  background: linear-gradient(
-    180deg,
-    #f2a7c1,
-    #c1d0ff,
-    #a6ddd1
-  );
+  background: linear-gradient(180deg, #f2a7c1, #c1d0ff, #a6ddd1);
   border-radius: 30px;
   box-shadow: 0 25px 55px rgba(0,0,0,0.25);
   padding: 40px 30px;

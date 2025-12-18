@@ -1,17 +1,17 @@
-document.getElementById("loginBtn").addEventListener("click", () => {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+function loginUser() {
+  const name = document.getElementById("nameInput").value.trim();
+  const email = document.getElementById("emailInput").value.trim();
+  const password = document.getElementById("passwordInput").value.trim();
 
-  if (!email || !password) {
+  if (!name || !email || !password) {
     alert("Please fill all fields");
     return;
   }
 
-  // Supabase login will be added here later
-  console.log("Login clicked:", { name, email, password });
-});
+  // Save user details
+  localStorage.setItem("loggedInName", name);
+  localStorage.setItem("loggedInEmail", email);
 
-document.getElementById("signupLink").addEventListener("click", () => {
-  window.location.href = "signup.html";
-});
+  // Redirect to dashboard
+  window.location.href = "dashboard.html";
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mood Trend | Calm Canvas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Drafting+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="moodtrend.css">
+</head>
+
+<body>
+
+  <div class="mobile">
+
+    <div class="back-btn" onclick="goBack()">← Back to Dashboard</div>
+
+    <h2>Mood Trend</h2>
+    <div class="sub-text">Your weekly mood tracking</div>
+
+    <div class="chart" id="chart"></div>
+    <div class="days" id="days"></div>
+
+    <div class="summary">
+      <div class="card" id="avg">Avg: -</div>
+      <div class="card" id="most">Most: -</div>
+      <div class="card" id="low">Low: -</div>
+    </div>
+
+    <div class="entries" id="entries"></div>
+
+  </div>
+
+  <!-- JS -->
+  <script src="moodtrend.js"></script>
+</body>
+</html>

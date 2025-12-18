@@ -1,18 +1,21 @@
-document.getElementById("signupBtn").addEventListener("click", () => {
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-  const password = document.getElementById("password").value;
+function signupUser() {
+  const name = document.getElementById("nameInput").value.trim();
+  const email = document.getElementById("emailInput").value.trim();
+  const phone = document.getElementById("phoneInput").value.trim();
+  const password = document.getElementById("passwordInput").value.trim();
 
-  if (!name || !email || !password) {
-    alert("Please fill all required fields");
+  if (name === "" || email === "" || phone === "" || password === "") {
+    alert("Please fill in all fields.");
     return;
   }
 
-  // Supabase signup will be added here later
-  console.log("Signup clicked:", { name, email, phone, password });
-});
+  // 🔹 added (no logic change)
+  localStorage.setItem("userName", name);
+  localStorage.setItem("userEmail", email);
 
-document.getElementById("loginLink").addEventListener("click", () => {
   window.location.href = "login.html";
-});
+}
+
+function goToLogin() {
+  window.location.href = "login.html";
+}

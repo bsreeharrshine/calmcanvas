@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #e6ebf2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Drafting Mono', monospace;
+}
+
+.mobile {
+  width: 375px;
+  height: 700px;
+  background: linear-gradient(180deg, #f2a7c1, #c1d0ff, #a6ddd1);
+  border-radius: 30px;
+  box-shadow: 0 25px 55px rgba(0,0,0,0.25);
+  padding: 26px 22px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.greeting {
+  font-size: 22px;
+  font-weight: 700;
+  color: #022b3a;
+}
+
+.sub-text {
+  font-size: 15px;
+  color: #355f7a;
+  margin-bottom: 22px;
+}
+
+.mood-options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 26px;
+}
+
+.mood {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.feature {
+  height: 120px;
+  border-radius: 22px;
+  padding: 16px;
+  font-weight: 600;
+  color: #022b3a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
