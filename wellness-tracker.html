@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wellness Tracker | Calm Canvas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Drafting Mono Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Drafting+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/wellness-tracker.css">
+</head>
+<body>
+
+  <div class="mobile">
+    <div class="back-btn" onclick="goBack()">← Back to Dashboard</div>
+
+    <h2>Wellness Tracker</h2>
+
+    <label>Date</label>
+    <input type="text" id="dateInput" readonly>
+
+    <label>Sleep Hours</label>
+    <input type="number" id="sleepInput" placeholder="Hours slept">
+
+    <label>Exercise / Activity</label>
+    <input type="text" id="exerciseInput" placeholder="Type & duration">
+
+    <label>Hydration (glasses)</label>
+    <input type="number" id="hydrationInput" placeholder="Number of glasses">
+
+    <label>Energy Level</label>
+    <select id="energyInput">
+      <option value="">Select</option>
+      <option value="Low">Low 😔</option>
+      <option value="Medium">Medium 😐</option>
+      <option value="High">High 😃</option>
+    </select>
+
+    <label>Mood</label>
+    <select id="moodInput">
+      <option value="">Select</option>
+      <option value="1">😔</option>
+      <option value="2">😐</option>
+      <option value="3">😊</option>
+      <option value="4">🤩</option>
+      <option value="5">😁</option>
+    </select>
+
+    <label>Stress Level</label>
+    <select id="stressInput">
+      <option value="">Select</option>
+      <option value="Low">Low 😌</option>
+      <option value="Medium">Medium 😐</option>
+      <option value="High">High 😣</option>
+    </select>
+
+    <label>Notes / Reflections</label>
+    <textarea id="notesInput" rows="3" placeholder="Write anything about your day..."></textarea>
+
+    <button onclick="saveEntry()">Save Entry</button>
+
+    <h3>Past Entries</h3>
+    <div class="past-entries" id="pastEntriesContainer">
+      No entries yet.
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="entryModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">✖ Close</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="js/wellness-tracker.js"></script>
+</body>
+</html>
