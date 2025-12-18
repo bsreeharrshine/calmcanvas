@@ -102,9 +102,9 @@ li button.delete {
 .modal {
   display: none;
   position: fixed;
-  z-index: 10;
   inset: 0;
   background-color: rgba(0,0,0,0.4);
+  z-index: 10;
 }
 
 .modal-content {

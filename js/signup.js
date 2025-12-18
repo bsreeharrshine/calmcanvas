@@ -4,15 +4,19 @@ function signupUser() {
   const phone = document.getElementById("phoneInput").value.trim();
   const password = document.getElementById("passwordInput").value.trim();
 
-  if (name === "" || email === "" || phone === "" || password === "") {
+  if (!name || !email || !phone || !password) {
     alert("Please fill in all fields.");
     return;
   }
 
-  // 🔹 added (no logic change)
-  localStorage.setItem("userName", name);
-  localStorage.setItem("userEmail", email);
+  // Save signup data (optional, simple frontend auth)
+  localStorage.setItem("signupName", name);
+  localStorage.setItem("signupEmail", email);
+  localStorage.setItem("signupPassword", password);
 
+  alert("Signup successful! Please login.");
+
+  // Redirect to login
   window.location.href = "login.html";
 }
 

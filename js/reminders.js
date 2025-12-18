@@ -5,7 +5,7 @@ function goBack() {
   window.location.href = "dashboard.html";
 }
 
-// Notification permission
+/* Notification permission */
 if ('Notification' in window && Notification.permission === 'default') {
   document.getElementById('permissionBox').style.display = 'block';
   Notification.requestPermission();
@@ -48,11 +48,11 @@ function addReminder() {
 }
 
 function displayReminders() {
-  const list = document.getElementById("reminderList");
-  list.innerHTML = "";
+  const list = document.getElementById('reminderList');
+  list.innerHTML = '';
 
   reminders.forEach((r, index) => {
-    const li = document.createElement("li");
+    const li = document.createElement('li');
 
     li.innerHTML = `
       <div>${r.time} — ${r.text}</div>
@@ -61,6 +61,7 @@ function displayReminders() {
         <button class="delete" onclick="deleteReminder(${index})">Delete ❌</button>
       </div>
     `;
+
     list.appendChild(li);
   });
 }
@@ -74,11 +75,11 @@ function openModal(index) {
   editIndex = index;
   editText.value = reminders[index].text;
   editTime.value = reminders[index].time;
-  editModal.style.display = "block";
+  editModal.style.display = 'block';
 }
 
 function closeModal() {
-  editModal.style.display = "none";
+  editModal.style.display = 'none';
   editIndex = null;
 }
 
@@ -92,12 +93,11 @@ function saveEdit() {
   }
 }
 
-// Notification check
+/* Notification check every minute */
 setInterval(() => {
   const now = new Date();
   const current =
-    now.getHours().toString().padStart(2, '0') +
-    ":" +
+    now.getHours().toString().padStart(2, '0') + ':' +
     now.getMinutes().toString().padStart(2, '0');
 
   reminders.forEach(r => {
